@@ -1,5 +1,6 @@
 class RespondToMatcher
   def initialize(expected)
+    SpecExpectation.matcher!
     @expected = expected
   end
 

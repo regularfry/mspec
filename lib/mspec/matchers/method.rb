@@ -4,6 +4,7 @@ class MethodMatcher
   include StringSymbolAdapter
 
   def initialize(method, include_super=true)
+    SpecExpectation.matcher!
     @include_super = include_super
     @method = convert_name method
   end

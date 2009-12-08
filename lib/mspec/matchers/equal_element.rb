@@ -1,5 +1,6 @@
 class EqualElementMatcher
   def initialize(element, attributes = nil, content = nil, options = {})
+    SpecExpectation.matcher!
     @element = element
     @attributes = attributes
     @content = content

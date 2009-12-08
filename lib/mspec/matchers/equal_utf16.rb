@@ -1,5 +1,6 @@
 class EqualUtf16Matcher
   def initialize(expected)
+    SpecExpectation.matcher!
     @expected = expected
   end
 

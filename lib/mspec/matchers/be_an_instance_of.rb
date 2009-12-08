@@ -1,5 +1,6 @@
 class BeAnInstanceOfMatcher
   def initialize(expected)
+    SpecExpectation.matcher!
     @expected = expected
   end
 

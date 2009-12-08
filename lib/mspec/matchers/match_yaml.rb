@@ -1,6 +1,7 @@
 class MatchYAMLMatcher
 
   def initialize(expected)
+    SpecExpectation.matcher!
     if valid_yaml?(expected)
       @expected = expected
     else

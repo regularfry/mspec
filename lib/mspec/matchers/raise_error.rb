@@ -1,5 +1,6 @@
 class RaiseErrorMatcher
   def initialize(exception, message, &block)
+    SpecExpectation.matcher!
     @exception = exception
     @message = message
     @block = block

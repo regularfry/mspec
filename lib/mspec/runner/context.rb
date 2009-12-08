@@ -33,6 +33,8 @@ class ContextState
     @children = []
 
     @mock_verify         = lambda { Mock.verify_count }
+    @expectation_verify  = lambda { SpecExpectation.verify_balance }
+    @expectation_cleanup = lambda { SpecExpectation.cleanup }
     @mock_cleanup        = lambda { Mock.cleanup }
     @expectation_missing = lambda { raise SpecExpectationNotFoundError }
   end
@@ -166,9 +168,11 @@ class ContextState
             end
             protect "after :each", post(:each)
             protect "Mock.verify_count", @mock_verify
+            protect "SpecExpectation.verify_balance", @expectation_verify
           end
 
           protect "Mock.cleanup", @mock_cleanup
+          protect "SpecExpectation.cleanup", @expectation_cleanup
           MSpec.actions :after, state
           @state = nil
         end

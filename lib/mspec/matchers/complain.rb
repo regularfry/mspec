@@ -2,6 +2,7 @@ require 'mspec/helpers/io'
 
 class ComplainMatcher
   def initialize(complaint)
+    SpecExpectation.matcher!
     @complaint = complaint
   end
 

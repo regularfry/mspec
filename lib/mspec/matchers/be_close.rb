@@ -2,6 +2,7 @@ TOLERANCE = 0.00003 unless Object.const_defined?(:TOLERANCE)
 
 class BeCloseMatcher
   def initialize(expected, tolerance)
+    SpecExpectation.matcher!
     @expected = expected
     @tolerance = tolerance
   end

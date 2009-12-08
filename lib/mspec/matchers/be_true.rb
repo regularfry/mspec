@@ -1,4 +1,8 @@
 class BeTrueMatcher
+  def initialize
+    SpecExpectation.matcher!
+  end
+
   def matches?(actual)
     @actual = actual
     @actual == true

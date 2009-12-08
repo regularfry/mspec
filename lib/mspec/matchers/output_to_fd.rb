@@ -8,6 +8,7 @@ require 'fileutils'
 # certain method being used.
 class OutputToFDMatcher
   def initialize(expected, to)
+    SpecExpectation.matcher!
     @to, @expected = to, expected
 
     case @to

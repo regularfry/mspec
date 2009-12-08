@@ -2,6 +2,7 @@ require 'mspec/helpers/io'
 
 class OutputMatcher
   def initialize(stdout, stderr)
+    SpecExpectation.matcher!
     @out = stdout
     @err = stderr
   end

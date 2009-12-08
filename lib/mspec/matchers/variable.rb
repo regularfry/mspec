@@ -8,6 +8,7 @@ class VariableMatcher
   end
 
   def initialize(variable)
+    SpecExpectation.matcher!
     @variable = convert_name(variable)
   end
 

@@ -1,4 +1,8 @@
 class BeEmptyMatcher
+  def initialize
+    SpecExpectation.matcher!
+  end
+
   def matches?(actual)
     @actual = actual
     @actual.empty?

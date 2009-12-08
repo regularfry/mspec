@@ -1,5 +1,6 @@
 class BeAncestorOfMatcher
   def initialize(expected)
+    SpecExpectation.matcher!
     @expected = expected
   end
 
