@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake/gempackagetask'
 
 $:.unshift File.expand_path(File.dirname(__FILE__) + '/lib')
-require 'lib/mspec/version'
+require 'mspec/version'
 
 begin
   require 'spec/rake/spectask'
