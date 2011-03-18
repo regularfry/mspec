@@ -1,11 +1,15 @@
 require 'rubygems'
-require 'spec/rake/spectask'
 require 'rake/gempackagetask'
 
 $:.unshift File.expand_path(File.dirname(__FILE__) + '/lib')
 require 'lib/mspec/version'
 
-Spec::Rake::SpecTask.new
+begin
+  require 'spec/rake/spectask'
+  Spec::Rake::SpecTask.new
+rescue LoadError
+  $stderr.puts("spec/rake/spectask was not found, spec tasks are not available")
+end
 
 task :default => :spec
 
